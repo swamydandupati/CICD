@@ -1,25 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Scm') {
-      steps {
-        git 'https://github.com/venkatakarthik94/CICD.git'
-      }
-    }
 
-    stage('Shell script 0') {
+    stage('Install NPM pakage') {
       steps {
         sh 'npm install'
       }
     }
 
-    stage('No Converter-0') {
+    stage('convert to Docker file') {
       steps {
         echo 'No converter for Builder: com.cloudbees.dockerpublish.DockerBuilder'
       }
     }
 
-    stage('Shell script 1') {
+    stage('Shell script to run container') {
       steps {
         sh 'sh deploy.sh'
       }
