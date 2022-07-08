@@ -10,7 +10,8 @@ pipeline {
 
     stage('convert to Docker file') {
       steps {
-        echo 'No converter for Builder: com.cloudbees.dockerpublish.DockerBuilder'
+        #echo 'No converter for Builder: com.cloudbees.dockerpublish.DockerBuilder'
+        sh 'docker images'
         sh 'docker build -t jenkins .'
       }
     }
